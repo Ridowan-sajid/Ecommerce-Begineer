@@ -1,0 +1,32 @@
+﻿@model IEnumerable<Ecommerce_Full.EF.Catagory>
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+<form method="post">
+    @*<input name="id" type="number" placeholder="id" />*@
+    @*<input name="phone" type="text" placeholder="phone" />*@
+    <input name="name" type="text" placeholder="name" />
+    <br /><br />
+    @*<input name="password" type="text" placeholder="password" />*@
+    @*<input name="catid" type="number" placeholder="Catagory id" />*@
+
+    <select name="catid">
+        @foreach (var item in Model)
+        {
+
+            <option value="@item.id">@item.name</option>
+
+        }
+    </select>
+    <br /><br />
+
+
+
+
+        <input name="submit" type="submit" value="Create" />
+    </form>
+
+
+

@@ -1,0 +1,76 @@
+﻿@*@model IEnumerable<Ecommerce_Full.EF.Product>*@
+@{
+    ViewBag.Title = "ProductList";
+}
+
+
+
+
+
+<h2>List</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            Id
+        </th>
+        @*<th>
+            Phone
+        </th>*@
+        <th>
+            Name
+        </th>
+        <th>
+            Catagory
+        </th>
+        @*<th>
+            Password
+        </th>*@
+        <th>
+            Edit
+        </th>
+        <th>
+            Delete
+        </th>
+        <th>
+            Cart
+        </th>
+    </tr>
+
+
+
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>
+        @item.id
+    </td>
+    <td>
+        @item.name
+    </td>
+    <td>
+        @item.Catagory.name
+    </td>
+    @*<td>
+            @item.phone
+        </td>
+        <td>
+            @item.password
+        </td>*@
+    <td>
+        <a href="/Product/Edit/@item.id">Edit</a>
+    </td>
+    <td>
+        <a href="/Product/Delete/@item.id">Delete</a>
+    </td>
+    <td>
+        <a href="/Product/Cart/@item.id">Add to Cart</a>
+    </td>
+</tr>
+    }
+
+
+</table>
+
+
+

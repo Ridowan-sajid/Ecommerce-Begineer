@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "ShowCart";
+}
+
+<h2>ShowCart</h2>
+<table class="table">
+    <tr>
+        <th>Name</th>
+        <th>Catagory</th>
+        <th>Cart</th>
+    </tr>
+    @if (Model != null)
+    {
+
+        foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @item.name
+            </td>
+            <td>
+                @item.Catagory.name
+            </td>
+            <td>
+                <a class="btn btn-primary" href="/Product/RemoveCart/@item.id">Remove</a>
+            </td>
+        </tr>
+        }
+    }
+</table>
+
